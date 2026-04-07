@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 import {Formulario} from './Formulario/Formulario.jsx'
+import {Citas} from './Citas/Citas.jsx'
 
 function App() {
 
   return (
     <>
     <Formulario></Formulario>
+    <Citas></Citas>
 
     </>
   )
