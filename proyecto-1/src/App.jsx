@@ -1,15 +1,22 @@
 import { useState } from 'react'
-import './App.css'
 import {Formulario} from './Formulario/Formulario.jsx'
-import {Citas} from './Citas/Citas.jsx'
+import {AdministradorCitas} from './Citas/Citas.jsx'
 
 function App() {
 
   return (
     <>
-    <Formulario></Formulario>
-    <Citas></Citas>
-
+    <h1>ADMINISTRADOR DE PACIENTES</h1>
+      <div class="container">
+        <div class="row">
+          <div class="one-half column">
+            <Formulario className="Formulario"></Formulario>
+          </div>
+          <div class="one-half column">
+          <AdministradorCitas className="Citas"></AdministradorCitas>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
