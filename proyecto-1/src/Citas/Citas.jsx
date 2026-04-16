@@ -1,17 +1,22 @@
-import {Cita} from './Cita.jsx'
+import {Cita} from '../Cita/Cita.jsx'
 
-function AdministradorCitas(){
-return(
-<>
-    <h2>Administra tus citas</h2>
-    <ul>
-        {Citas.map(cita => (
-            <Cita></Cita>
+function AdministradorCitas({ citas, setCitas }) {
+
+  return (
+    <>
+      <h2>Administra tus citas</h2>
+      <ul>
+        {citas.map(cita => (
+         
+          <Cita
+            key={cita.id}
+            cita={cita}
+            setCitas={setCitas}
+          />
         ))}
-    </ul>
-    
-</>
-)
+      </ul>
+    </>
+  )
 }
 
 export {AdministradorCitas}

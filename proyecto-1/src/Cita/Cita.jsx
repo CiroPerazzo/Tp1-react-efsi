@@ -1,13 +1,33 @@
-function Cita(){
-return(
-<div class="cita">
-    <p>Mascota: <span>Nina</span></p>
-    <p>Dueño: <span>Martin</span></p>
-    <p>Fecha: <span>2021-08-05</span></p>
-    <p>Hora: <span>08:20</span></p>
-    <p>Sintomas: <span>Le duele la pierna</span></p><button class="button-elimnar-u-full-width">Eliminar ×</button>
-</div>
-)
+
+function Cita({ cita, setCitas }) {
+
+  const handleEliminar = () => {
+ 
+    const confirmar = window.confirm('¿Seguro que querés eliminar esta cita?');
+
+    if (confirmar) {
+
+      setCitas(citasAnteriores =>
+        citasAnteriores.filter(c => c.id !== cita.id)
+      );
+    }
+  }
+
+  return (
+    <div className="cita">
+      <p>Mascota: <span>{cita.mascota}</span></p>
+      <p>Dueño: <span>{cita.propietario}</span></p>
+      <p>Fecha: <span>{cita.fecha}</span></p>
+      <p>Hora: <span>{cita.hora}</span></p>
+      <p>Sintomas: <span>{cita.sintomas}</span></p>
+      <button
+        className="button-elimnar-u-full-width"
+        onClick={handleEliminar}
+      >
+        Eliminar X
+      </button>
+    </div>
+  )
 }
 
-export{Cita}
+export {Cita}
